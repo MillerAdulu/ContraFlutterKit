@@ -130,10 +130,10 @@ class BarChartSample3State extends State<BarChartSample3> {
               show: true,
               bottomTitles: SideTitles(
                 showTitles: true,
-                textStyle: TextStyle(
-                    color: const Color(0xff7589a2),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14),
+                // textStyle: TextStyle(
+                //     color: const Color(0xff7589a2),
+                //     fontWeight: FontWeight.bold,
+                //     fontSize: 14),
                 margin: 20,
                 getTitles: (double value) {
                   switch (value.toInt()) {
@@ -165,7 +165,7 @@ class BarChartSample3State extends State<BarChartSample3> {
                 BarChartRodData(
                     y: 8,
                     width: 56,
-                    color: selago,
+                    // color: selago,
                     borderRadius: BorderRadius.all(Radius.circular(0)))
               ], showingTooltipIndicators: [
                 0
@@ -175,7 +175,8 @@ class BarChartSample3State extends State<BarChartSample3> {
                     y: 15,
                     width: 56,
                     borderRadius: BorderRadius.all(Radius.circular(0)),
-                    color: bareley_white)
+                    // color: bareley_white,
+                    )
               ], showingTooltipIndicators: [
                 0
               ]),
@@ -184,7 +185,8 @@ class BarChartSample3State extends State<BarChartSample3> {
                     y: 12,
                     width: 56,
                     borderRadius: BorderRadius.all(Radius.circular(0)),
-                    color: pink_salomn)
+                    // color: pink_salomn,
+                    )
               ], showingTooltipIndicators: [
                 0
               ]),
@@ -193,7 +195,8 @@ class BarChartSample3State extends State<BarChartSample3> {
                     y: 16,
                     width: 56,
                     borderRadius: BorderRadius.all(Radius.circular(0)),
-                    color: lavandar_bush)
+                    // color: lavandar_bush,
+                    )
               ], showingTooltipIndicators: [
                 0
               ]),
@@ -202,7 +205,8 @@ class BarChartSample3State extends State<BarChartSample3> {
                     y: 13,
                     width: 56,
                     borderRadius: BorderRadius.all(Radius.circular(0)),
-                    color: santas_gray)
+                    // color: santas_gray.
+                    )
               ], showingTooltipIndicators: [
                 0
               ]),
@@ -211,7 +215,8 @@ class BarChartSample3State extends State<BarChartSample3> {
                     y: 6,
                     width: 56,
                     borderRadius: BorderRadius.all(Radius.circular(0)),
-                    color: selago)
+                    // color: selago,
+                    )
               ], showingTooltipIndicators: [
                 0
               ]),
@@ -220,7 +225,8 @@ class BarChartSample3State extends State<BarChartSample3> {
                     y: 8,
                     width: 56,
                     borderRadius: BorderRadius.all(Radius.circular(0)),
-                    color: foam)
+                    // color: foam
+                    )
               ], showingTooltipIndicators: [
                 0
               ]),

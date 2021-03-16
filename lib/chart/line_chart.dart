@@ -88,10 +88,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
         bottomTitles: SideTitles(
           showTitles: false,
           reservedSize: 22,
-          textStyle: const TextStyle(
-              color: Color(0xff68737d),
-              fontWeight: FontWeight.bold,
-              fontSize: 16),
+          // textStyle: const TextStyle(
+          //     color: Color(0xff68737d),
+          //     fontWeight: FontWeight.bold,
+          //     fontSize: 16),
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
@@ -107,11 +107,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
         ),
         leftTitles: SideTitles(
           showTitles: false,
-          textStyle: const TextStyle(
-            color: Color(0xff67727d),
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-          ),
+          // textStyle: const TextStyle(
+          //   color: Color(0xff67727d),
+          //   fontWeight: FontWeight.bold,
+          //   fontSize: 15,
+          // ),
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
@@ -187,10 +187,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
         bottomTitles: SideTitles(
           showTitles: true,
           reservedSize: 22,
-          textStyle: const TextStyle(
-              color: Color(0xff68737d),
-              fontWeight: FontWeight.bold,
-              fontSize: 16),
+          // textStyle: const TextStyle(
+          //     color: Color(0xff68737d),
+          //     fontWeight: FontWeight.bold,
+          //     fontSize: 16),
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
@@ -206,11 +206,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
         ),
         leftTitles: SideTitles(
           showTitles: true,
-          textStyle: const TextStyle(
-            color: Color(0xff67727d),
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-          ),
+          // textStyle: const TextStyle(
+          //   color: Color(0xff67727d),
+          //   fontWeight: FontWeight.bold,
+          //   fontSize: 15,
+          // ),
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
