@@ -18,8 +18,8 @@ class AddAlarmPage extends StatefulWidget {
 }
 
 class _AddAlarmPageState extends State<AddAlarmPage> {
-  List<Alarm> list = List<Alarm>();
-  List<String> items = List<String>();
+  List<Alarm> list = [];
+  List<String> items = [];
   bool isChanged = false;
 
   void onChanged(bool value) {

@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SettingsCardItem extends StatefulWidget {
-  Settings setting;
+  Settings? setting;
 
   SettingsCardItem({this.setting});
 
@@ -14,16 +14,16 @@ class SettingsCardItem extends StatefulWidget {
 }
 
 class _SettingsCardItemState extends State<SettingsCardItem> {
-  String title;
+  String? title;
 
-  String text;
+  String? text;
 
-  bool enable;
+  bool? enable;
 
-  Color bgColor;
+  Color? bgColor;
 
-  Color textColor;
-  bool isChanged = false;
+  Color? textColor;
+  bool? isChanged = false;
 
   void onChanged(bool value) {
     setState(() {
@@ -34,12 +34,12 @@ class _SettingsCardItemState extends State<SettingsCardItem> {
   @override
   void initState() {
     super.initState();
-    isChanged = widget.setting.enable;
-    title = widget.setting.title;
-    text = widget.setting.text;
-    enable = widget.setting.enable;
-    bgColor = widget.setting.bgColor;
-    textColor = widget.setting.textColor;
+    isChanged = widget.setting!.enable;
+    title = widget.setting!.title;
+    text = widget.setting!.text;
+    enable = widget.setting!.enable;
+    bgColor = widget.setting!.bgColor;
+    textColor = widget.setting!.textColor;
   }
 
   @override
@@ -77,7 +77,7 @@ class _SettingsCardItemState extends State<SettingsCardItem> {
             height: 8,
           ),
           Switch(
-            value: isChanged,
+            value: isChanged!,
             onChanged: onChanged,
             activeTrackColor: lightening_yellow,
             inactiveTrackColor: santas_gray,

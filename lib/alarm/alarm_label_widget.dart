@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'alarm_label.dart';
 
 class AlarmLabelWidget extends StatelessWidget {
-  AlarmLabel label;
-  VoidCallback onTap;
+  AlarmLabel? label;
+  VoidCallback? onTap;
 
   AlarmLabelWidget({this.label, this.onTap});
 
@@ -21,14 +21,14 @@ class AlarmLabelWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             ContraText(
-              text: label.title,
+              text: label!.title,
               alignment: Alignment.centerLeft,
               color: wood_smoke,
               size: 21,
             ),
-            label.selected
+            label!.selected!
                 ? ContraText(
-                    text: label.selectedText,
+                    text: label!.selectedText,
                     alignment: Alignment.centerLeft,
                     color: black,
                     size: 17,

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class OnboardPageTypeTwo extends StatelessWidget {
-  final OnboardData data;
+  final OnboardData? data;
 
   const OnboardPageTypeTwo({this.data});
 
@@ -27,7 +27,7 @@ class OnboardPageTypeTwo extends StatelessWidget {
                     ),
                     Center(
                       child: SvgPicture.asset(
-                        data.placeHolder,
+                        data!.placeHolder!,
                         height: 370,
                         width: 310,
                       ),
@@ -45,7 +45,7 @@ class OnboardPageTypeTwo extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         left: 24.0, right: 24.0, top: 12.0, bottom: 12.0),
                     child: Text(
-                      data.title,
+                      data!.title!,
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           fontSize: 36,
@@ -57,7 +57,7 @@ class OnboardPageTypeTwo extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         left: 24.0, right: 24.0, top: 12.0, bottom: 12.0),
                     child: Text(
-                      data.description,
+                      data!.description!,
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           fontSize: 21,

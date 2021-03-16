@@ -13,7 +13,7 @@ class ImageTextPager extends StatefulWidget {
 }
 
 class _ImageTextPagerState extends State<ImageTextPager> {
-  PageController _pageController;
+  PageController? _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
@@ -37,7 +37,7 @@ class _ImageTextPagerState extends State<ImageTextPager> {
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _pageController!.dispose();
     super.dispose();
   }
 

@@ -14,7 +14,7 @@ class UserListPage extends StatefulWidget {
 
 class _UserListPageState extends State<UserListPage> {
   TextEditingController _textEditingController = TextEditingController();
-  List<User> users = List<User>();
+  List<User> users = [];
 
   @override
   void initState() {

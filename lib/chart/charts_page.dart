@@ -12,7 +12,7 @@ import '../login/contra_text.dart';
 import 'line_chart.dart';
 
 class ChartsPage extends StatefulWidget {
-  bool isBarChart;
+  bool? isBarChart;
 
   ChartsPage({this.isBarChart});
 
@@ -21,7 +21,7 @@ class ChartsPage extends StatefulWidget {
 }
 
 class _ChartsPageState extends State<ChartsPage> {
-  List<Expense> expenses = List<Expense>();
+  List<Expense> expenses = [];
 
   @override
   void initState() {
@@ -111,7 +111,7 @@ class _ChartsPageState extends State<ChartsPage> {
           SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                widget.isBarChart ? BarChartSample3() : LineChartSample2(),
+                widget.isBarChart! ? BarChartSample3() : LineChartSample2(),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 24.0, vertical: 0),

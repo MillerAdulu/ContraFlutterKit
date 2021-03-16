@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LocationListItem extends StatelessWidget {
-  Location location;
+  Location? location;
 
   LocationListItem({this.location});
 
@@ -20,7 +20,7 @@ class LocationListItem extends StatelessWidget {
           Container(
             height: 160,
             child: MapWidget(
-              distance: location.distance,
+              distance: location!.distance,
             ),
           ),
           SizedBox(

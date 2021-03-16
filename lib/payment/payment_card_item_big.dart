@@ -6,21 +6,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PaymentCartItemBig extends StatelessWidget {
-  final PaymentType type;
-  final bool isVertical;
+  final PaymentType? type;
+  final bool? isVertical;
 
   const PaymentCartItemBig({this.type, this.isVertical});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: isVertical ? MediaQuery.of(context).size.width : 250,
-      margin: isVertical
+      height: isVertical! ? MediaQuery.of(context).size.width : 250,
+      margin: isVertical!
           ? EdgeInsets.symmetric(horizontal: 24, vertical: 12)
           : EdgeInsets.only(right: 12, top: 24, bottom: 12),
       padding: EdgeInsets.all(24),
       decoration: ShapeDecoration(
-          color: type.color,
+          color: type!.color,
           shadows: [
             BoxShadow(
               color: wood_smoke,
@@ -37,18 +37,18 @@ class PaymentCartItemBig extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(
-            type.type,
+            type!.type!,
             style: TextStyle(
                 color: white, fontSize: 25, fontWeight: FontWeight.w500),
           ),
           Text(
-            type.price != null ? "\$" + type.price : "FREE",
+            type!.price != null ? "\$" + type!.price! : "FREE",
             style: TextStyle(
                 color: white, fontSize: 44, fontWeight: FontWeight.w800),
           ),
-          isVertical
+          isVertical!
               ? CustomListItem(
-                  list: type.list,
+                  list: type!.list,
                 )
               : Padding(
                   padding: const EdgeInsets.symmetric(vertical: 24.0),
@@ -61,11 +61,11 @@ class PaymentCartItemBig extends StatelessWidget {
           ButtonPlainWithShadow(
             text: "Select",
             height: 48,
-            shadowColor: type.buttonColor,
-            color: type.buttonColor,
+            shadowColor: type!.buttonColor,
+            color: type!.buttonColor,
             callback: () {},
-            textColor: type.buttonTextColor,
-            borderColor: type.buttonColor,
+            textColor: type!.buttonTextColor,
+            borderColor: type!.buttonColor,
           ),
         ],
       ),

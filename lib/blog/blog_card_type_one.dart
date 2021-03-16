@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'blog.dart';
 
 class BlogCardTypeOne extends StatelessWidget {
-  final VoidCallback onTap;
-  final Blog blog;
+  final VoidCallback? onTap;
+  final Blog? blog;
 
   const BlogCardTypeOne({this.onTap, this.blog});
 
@@ -19,7 +19,7 @@ class BlogCardTypeOne extends StatelessWidget {
           margin: EdgeInsets.only(top: 24),
           padding: EdgeInsets.all(24),
           decoration: ShapeDecoration(
-              color: blog.bgColor,
+              color: blog!.bgColor,
               shadows: [
                 BoxShadow(
                   color: wood_smoke,
@@ -44,7 +44,7 @@ class BlogCardTypeOne extends StatelessWidget {
                 height: 24,
               ),
               Text(
-                blog.title,
+                blog!.title!,
                 style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
@@ -60,14 +60,14 @@ class BlogCardTypeOne extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        blog.user,
+                        blog!.user!,
                         style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
                             color: wood_smoke),
                       ),
                       Text(
-                        blog.time,
+                        blog!.time!,
                         style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.normal,

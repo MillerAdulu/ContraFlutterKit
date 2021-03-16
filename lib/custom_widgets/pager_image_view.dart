@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PagerImageView extends StatefulWidget {
-  final List<String> images;
+  final List<String>? images;
 
   const PagerImageView({this.images});
 
@@ -13,28 +13,28 @@ class PagerImageView extends StatefulWidget {
 }
 
 class _PagerImageViewState extends State<PagerImageView> {
-  PageController _pageController;
+  PageController? _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
-  List<String> _images = [];
+  List<String>? _images = [];
   final List<Widget> _cards = [];
 
   @override
   void initState() {
     _images = widget.images;
     _cards.add(SvgPicture.asset(
-      _images[0],
+      _images![0],
       height: 290,
       width: 300,
     ));
     _cards.add(SvgPicture.asset(
-      _images[1],
+      _images![1],
       height: 290,
       width: 300,
     ));
     _cards.add(SvgPicture.asset(
-      _images[2],
+      _images![2],
       height: 290,
       width: 300,
     ));
@@ -44,7 +44,7 @@ class _PagerImageViewState extends State<PagerImageView> {
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _pageController!.dispose();
     super.dispose();
   }
 

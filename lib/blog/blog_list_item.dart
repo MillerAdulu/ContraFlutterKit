@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'blog.dart';
 
 class BlogListItem extends StatelessWidget {
-  final Blog blog;
-  final VoidCallback onTap;
+  final Blog? blog;
+  final VoidCallback? onTap;
 
   const BlogListItem({this.blog, this.onTap});
 
@@ -35,7 +35,7 @@ class BlogListItem extends StatelessWidget {
                   size: 40,
                 ),
                 decoration: ShapeDecoration(
-                    color: blog.bgColor,
+                    color: blog!.bgColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(16)),
                         side: BorderSide(color: wood_smoke, width: 2))),
@@ -60,7 +60,7 @@ class BlogListItem extends StatelessWidget {
                     height: 12,
                   ),
                   Text(
-                    blog.title,
+                    blog!.title!,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                     style: TextStyle(

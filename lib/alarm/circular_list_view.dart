@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'circular_list_position.dart';
 
 class CircularListView extends StatefulWidget {
-  final List<int> items;
-  final double radius;
+  final List<int>? items;
+  final double? radius;
 
   CircularListView({
     this.items,
@@ -18,10 +18,10 @@ class CircularListView extends StatefulWidget {
   List<Widget> _radialListItems() {
     final double firstItemAngle = pi;
     final double lastItemAngle = pi;
-    final double angleDiff = (firstItemAngle + lastItemAngle) / (items.length);
+    final double angleDiff = (firstItemAngle + lastItemAngle) / (items!.length);
 
     double currentAngle = firstItemAngle;
-    return items.map((int i) {
+    return items!.map((int i) {
       final listItem = _radialListItem(currentAngle);
       currentAngle += angleDiff;
       return listItem;
@@ -29,7 +29,7 @@ class CircularListView extends StatefulWidget {
   }
 
   List<Widget> _allWidgets() {
-    List<Widget> allWidgets = List<Widget>();
+    List<Widget> allWidgets = [];
     allWidgets.add(_backgroundWidget());
     allWidgets.addAll(_radialListItems());
     return allWidgets;

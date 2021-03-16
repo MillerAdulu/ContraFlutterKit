@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ShoppingCardPagerItem extends StatelessWidget {
-  final CategoryBig categoryBig;
+  final CategoryBig? categoryBig;
 
   const ShoppingCardPagerItem({this.categoryBig});
 
@@ -15,7 +15,7 @@ class ShoppingCardPagerItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 8),
       decoration: ShapeDecoration(
-          color: categoryBig.bgColor,
+          color: categoryBig!.bgColor,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16)),
               side: BorderSide(color: wood_smoke, width: 2))),
@@ -30,7 +30,7 @@ class ShoppingCardPagerItem extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 24.0, top: 24),
                   child: Text(
-                    categoryBig.name,
+                    categoryBig!.name!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -58,7 +58,7 @@ class ShoppingCardPagerItem extends StatelessWidget {
           Expanded(
             flex: 4,
             child: SvgPicture.asset(
-              categoryBig.image,
+              categoryBig!.image!,
               width: 210,
               height: 230,
             ),

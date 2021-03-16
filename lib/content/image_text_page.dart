@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ImageTextPage extends StatefulWidget {
-  String image;
+  String? image;
 
   ImageTextPage({this.image});
 
@@ -20,7 +20,7 @@ class _ImageTextPageState extends State<ImageTextPage> {
       body: Container(
         alignment: Alignment.bottomCenter,
         child: SvgPicture.asset(
-          widget.image,
+          widget.image!,
           height: 500,
           width: 180,
         ),

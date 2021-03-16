@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomHeader extends StatelessWidget {
-  String lineOneText;
-  String lineTwotext;
-  Color fg_color;
-  Color bg_color;
-  Color color;
+  String? lineOneText;
+  String? lineTwotext;
+  Color? fg_color;
+  Color? bg_color;
+  Color? color;
 
   CustomHeader(
       {this.lineOneText,
@@ -28,19 +28,19 @@ class CustomHeader extends StatelessWidget {
             children: <Widget>[
               // Stroked text as border.
               Text(
-                lineOneText,
+                lineOneText!,
                 style: TextStyle(
                   fontSize: 44,
                   fontWeight: FontWeight.w800,
                   foreground: Paint()
                     ..style = PaintingStyle.stroke
                     ..strokeWidth = 1
-                    ..color = fg_color,
+                    ..color = fg_color!,
                 ),
               ),
               // Solid text as fill.
               Text(
-                lineOneText,
+                lineOneText!,
                 style: TextStyle(
                     fontSize: 44, color: bg_color, fontWeight: FontWeight.w800),
               ),

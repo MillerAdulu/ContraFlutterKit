@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomSearchText extends StatelessWidget {
-  final String text;
-  final String iconPath;
-  final bool enable;
-  final VoidCallback callback;
-  final TextEditingController controller;
+  final String? text;
+  final String? iconPath;
+  final bool? enable;
+  final VoidCallback? callback;
+  final TextEditingController? controller;
 
   const CustomSearchText(
       {this.text, this.iconPath, this.enable, this.callback, this.controller});
@@ -32,11 +32,11 @@ class CustomSearchText extends StatelessWidget {
               side: BorderSide(color: wood_smoke, width: 2))),
       child: TextField(
         onTap: callback,
-        readOnly: !enable,
-        enableInteractiveSelection: enable,
+        readOnly: !enable!,
+        enableInteractiveSelection: enable!,
         autofocus: false,
         controller: controller,
-        enableSuggestions: enable,
+        enableSuggestions: enable!,
         decoration: InputDecoration(
             hintText: text,
             hintStyle: TextStyle(
@@ -57,7 +57,7 @@ class CustomSearchText extends StatelessWidget {
             suffixIcon: Padding(
               padding: const EdgeInsets.all(16.0),
               child: SvgPicture.asset(
-                iconPath,
+                iconPath!,
                 height: 24,
                 width: 24,
               ),

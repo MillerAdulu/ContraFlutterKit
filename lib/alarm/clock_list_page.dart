@@ -14,7 +14,7 @@ class ClockListPage extends StatefulWidget {
 }
 
 class _ClockListPageState extends State<ClockListPage> {
-  List<Clock> clocks = List<Clock>();
+  List<Clock> clocks = [];
 
   @override
   void initState() {

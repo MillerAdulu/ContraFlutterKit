@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChipsFilterWidget extends StatefulWidget {
-  final List<String> filters;
+  final List<String>? filters;
 
   const ChipsFilterWidget({this.filters});
 
@@ -13,8 +13,8 @@ class ChipsFilterWidget extends StatefulWidget {
 }
 
 class _ChipsFilterWidgetState extends State<ChipsFilterWidget> {
-  List<String> options = List();
-  List<int> selectedChoices = List();
+  List<String>? options = [];
+  List<int> selectedChoices = [];
 
   @override
   void initState() {
@@ -32,11 +32,11 @@ class _ChipsFilterWidgetState extends State<ChipsFilterWidget> {
         spacing: 12,
         runSpacing: 12,
         children: List<Widget>.generate(
-          options.length,
+          options!.length,
           (int index) {
             return ChipWidget(
               selected: selectedChoices.contains(index),
-              text: options[index],
+              text: options![index],
               onTap: () {
                 setState(() {
                   selectedChoices.contains(index)
@@ -53,7 +53,7 @@ class _ChipsFilterWidgetState extends State<ChipsFilterWidget> {
                   borderRadius: BorderRadius.circular(16),
                   side: BorderSide(color: wood_smoke, width: 2)),
               label: Text(
-                options[index],
+                options![index],
                 style: TextStyle(
                     color: wood_smoke,
                     fontWeight: FontWeight.w800,

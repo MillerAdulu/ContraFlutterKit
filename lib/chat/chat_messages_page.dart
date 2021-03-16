@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'chat.dart';
 
 class ChatMessagesPage extends StatefulWidget {
-  final Chat chat;
+  final Chat? chat;
 
   const ChatMessagesPage({this.chat});
 
@@ -20,7 +20,7 @@ class ChatMessagesPage extends StatefulWidget {
 }
 
 class _ChatMessagesPageState extends State<ChatMessagesPage> {
-  List<Message> _items = List<Message>();
+  List<Message> _items = [];
 
   @override
   void initState() {
@@ -121,7 +121,7 @@ class _ChatMessagesPageState extends State<ChatMessagesPage> {
                   child: ContraText(
                     size: 27,
                     alignment: Alignment.bottomCenter,
-                    text: widget.chat.name,
+                    text: widget.chat!.name,
                   ),
                 ),
                 Expanded(
@@ -183,12 +183,12 @@ class _ChatMessagesPageState extends State<ChatMessagesPage> {
     bool val = false;
     if (index > 0) {
       Message current = _items[index];
-      Message previous = _items[index - 1] != null ? _items[index - 1] : null;
-      if (previous != null) {
-        if (previous.time == current.time) {
-          val = true;
-        }
-      }
+      Message previous = _items[index - 1];
+      // if (previous != null) {
+      //   if (previous.time == current.time) {
+      //     val = true;
+      //   }
+      // }
     }
     return val;
   }

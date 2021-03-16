@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'clock.dart';
 
 class ClockListItem extends StatelessWidget {
-  Clock clock;
+  Clock? clock;
 
   ClockListItem({this.clock});
 
@@ -16,7 +16,7 @@ class ClockListItem extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 12),
       padding: EdgeInsets.all(24),
       decoration: ShapeDecoration(
-          color: clock.color,
+          color: clock!.color,
           shadows: [BoxShadow(color: wood_smoke, offset: Offset(0, 2))],
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -29,13 +29,13 @@ class ClockListItem extends StatelessWidget {
             children: <Widget>[
               ContraText(
                 color: wood_smoke,
-                text: clock.country,
+                text: clock!.country,
                 size: 27,
                 alignment: Alignment.centerLeft,
               ),
               ContraText(
                 color: trout,
-                text: clock.city,
+                text: clock!.city,
                 size: 15,
                 alignment: Alignment.centerLeft,
                 weight: FontWeight.w500,
@@ -46,13 +46,13 @@ class ClockListItem extends StatelessWidget {
             children: <Widget>[
               ContraText(
                 color: wood_smoke,
-                text: clock.time,
+                text: clock!.time,
                 size: 44,
                 alignment: Alignment.centerLeft,
               ),
               ContraText(
                 color: wood_smoke,
-                text: clock.am_pm,
+                text: clock!.am_pm,
                 size: 15,
                 alignment: Alignment.centerLeft,
               ),

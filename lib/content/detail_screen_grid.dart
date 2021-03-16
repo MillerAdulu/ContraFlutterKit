@@ -13,7 +13,7 @@ class DetailScreenGridPage extends StatefulWidget {
 }
 
 class _DetailScreenGridPageState extends State<DetailScreenGridPage> {
-  List<Color> bgs = List<Color>();
+  List<Color> bgs = [];
 
   @override
   void initState() {

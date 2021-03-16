@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class UserListItem extends StatelessWidget {
-  final User user;
+  final User? user;
 
   const UserListItem({this.user});
 
@@ -16,7 +16,7 @@ class UserListItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 12),
       decoration: ShapeDecoration(
-          color: user.bgColor,
+          color: user!.bgColor,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16)),
               side: BorderSide(color: wood_smoke, width: 2))),
@@ -30,7 +30,7 @@ class UserListItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 ContraText(
-                  text: user.name,
+                  text: user!.name,
                   size: 24,
                   color: wood_smoke,
                   weight: FontWeight.w800,
@@ -41,7 +41,7 @@ class UserListItem extends StatelessWidget {
                   height: 12,
                 ),
                 ContraText(
-                  text: user.designation,
+                  text: user!.designation,
                   size: 17,
                   color: white,
                   weight: FontWeight.bold,
@@ -87,7 +87,7 @@ class UserListItem extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: SvgPicture.asset(
-              user.profile,
+              user!.profile!,
               width: 210,
               height: 230,
             ),

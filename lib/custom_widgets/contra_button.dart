@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ContraButton extends StatelessWidget {
-  final Color borderColor;
-  final Color shadowColor;
-  final Color color;
-  final Color textColor;
-  final String text;
-  final VoidCallback callback;
-  final double size;
-  final double height;
-  final bool isPrefix;
-  final bool isSuffix;
-  final String iconPath;
-  final Color iconColor;
-  final double textSize;
+  final Color? borderColor;
+  final Color? shadowColor;
+  final Color? color;
+  final Color? textColor;
+  final String? text;
+  final VoidCallback? callback;
+  final double? size;
+  final double? height;
+  final bool? isPrefix;
+  final bool? isSuffix;
+  final String? iconPath;
+  final Color? iconColor;
+  final double? textSize;
 
   const ContraButton(
       {this.borderColor,
@@ -44,27 +44,27 @@ class ContraButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            isPrefix
+            isPrefix!
                 ? Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: SvgPicture.asset(
-                      iconPath,
+                      iconPath!,
                       color: white,
                     ),
                   )
                 : SizedBox(),
             Text(
-              text,
+              text!,
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: textColor != null ? textColor : wood_smoke,
                   fontSize: textSize != null ? textSize : 21,
                   fontWeight: FontWeight.w800),
             ),
-            isSuffix
+            isSuffix!
                 ? Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: SvgPicture.asset(iconPath),
+                    child: SvgPicture.asset(iconPath!),
                   )
                 : SizedBox()
           ],
@@ -72,7 +72,7 @@ class ContraButton extends StatelessWidget {
         decoration: ShapeDecoration(
             shadows: [
               BoxShadow(
-                color: shadowColor,
+                color: shadowColor!,
                 offset: Offset(
                   0.0, // Move to right 10  horizontally
                   4.0, // Move to bottom 5 Vertically
@@ -82,7 +82,7 @@ class ContraButton extends StatelessWidget {
             color: color,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
-                side: BorderSide(color: borderColor, width: 2))),
+                side: BorderSide(color: borderColor!, width: 2))),
       ),
     );
   }

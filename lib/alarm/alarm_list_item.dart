@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'alarm.dart';
 
 class AlarmListItem extends StatefulWidget {
-  Alarm alarm;
+  Alarm? alarm;
 
   AlarmListItem({this.alarm});
 
@@ -14,12 +14,12 @@ class AlarmListItem extends StatefulWidget {
 }
 
 class _AlarmListItemState extends State<AlarmListItem> {
-  List<String> items = List<String>();
+  List<String>? items = [];
 
   @override
   void initState() {
     super.initState();
-    items = widget.alarm.datesList;
+    items = widget.alarm!.datesList;
   }
 
   bool isChanged = false;
@@ -74,12 +74,12 @@ class _AlarmListItemState extends State<AlarmListItem> {
               runAlignment: WrapAlignment.start,
               alignment: WrapAlignment.start,
               direction: Axis.horizontal,
-              children: List<Widget>.generate(widget.alarm.datesList.length,
+              children: List<Widget>.generate(widget.alarm!.datesList!.length,
                   (int index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
                   child: Text(
-                    items[index],
+                    items![index],
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         color: isChanged ? wood_smoke : santas_gray,

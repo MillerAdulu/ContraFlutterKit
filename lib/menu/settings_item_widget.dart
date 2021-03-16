@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SettingsItemWidget extends StatefulWidget {
-  SettingsItem settingsItem;
+  SettingsItem? settingsItem;
 
   SettingsItemWidget({this.settingsItem});
 
@@ -14,11 +14,11 @@ class SettingsItemWidget extends StatefulWidget {
 }
 
 class _SettingsItemWidgetState extends State<SettingsItemWidget> {
-  String title;
-  String description;
+  String? title;
+  String? description;
 
-  bool enable;
-  bool isChanged = false;
+  bool? enable;
+  bool? isChanged = false;
 
   void onChanged(bool value) {
     setState(() {
@@ -29,9 +29,9 @@ class _SettingsItemWidgetState extends State<SettingsItemWidget> {
   @override
   void initState() {
     super.initState();
-    isChanged = widget.settingsItem.enable;
-    title = widget.settingsItem.title;
-    description = widget.settingsItem.description;
+    isChanged = widget.settingsItem!.enable;
+    title = widget.settingsItem!.title;
+    description = widget.settingsItem!.description;
   }
 
   @override
@@ -59,9 +59,9 @@ class _SettingsItemWidgetState extends State<SettingsItemWidget> {
                 SizedBox(
                   height: 4,
                 ),
-                description.isNotEmpty
+                description!.isNotEmpty
                     ? Text(
-                        description,
+                        description!,
                         style: TextStyle(
                             color: trout,
                             fontSize: 15,
@@ -74,7 +74,7 @@ class _SettingsItemWidgetState extends State<SettingsItemWidget> {
             ),
           ),
           Switch(
-            value: isChanged,
+            value: isChanged!,
             onChanged: onChanged,
             activeTrackColor: lightening_yellow,
             inactiveTrackColor: santas_gray,

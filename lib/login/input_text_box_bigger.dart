@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class InputTextBoxBigger extends StatelessWidget {
-  final String text;
-  final String iconPath;
+  final String? text;
+  final String? iconPath;
 
   const InputTextBoxBigger({this.text, this.iconPath});
 
@@ -44,7 +44,7 @@ class InputTextBoxBigger extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 12.0, top: 16.0),
                 child: SvgPicture.asset(
-                  iconPath,
+                  iconPath!,
                   height: 24,
                   width: 24,
                 ),

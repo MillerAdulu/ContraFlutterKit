@@ -13,7 +13,7 @@ class ShoppingHomePageOne extends StatefulWidget {
 }
 
 class _ShoppingHomePageOneState extends State<ShoppingHomePageOne> {
-  List<ShopItem> _items = List<ShopItem>();
+  List<ShopItem> _items = [];
   TextEditingController _textEditingController = TextEditingController();
 
   @override

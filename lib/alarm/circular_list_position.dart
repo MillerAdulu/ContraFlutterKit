@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class CircularPosition extends StatefulWidget {
-  final double radius;
-  final double angle;
-  final Widget child;
+  final double? radius;
+  final double? angle;
+  final Widget? child;
 
   CircularPosition({
     this.angle,
@@ -22,8 +22,8 @@ class CircularPosition extends StatefulWidget {
 class CircularPositionState extends State<CircularPosition> {
   @override
   Widget build(BuildContext context) {
-    final x = cos(widget.angle) * widget.radius;
-    final y = sin(widget.angle) * widget.radius;
+    final x = cos(widget.angle!) * widget.radius!;
+    final y = sin(widget.angle!) * widget.radius!;
 
     return Transform(
       transform: new Matrix4.translationValues(x, y, 0.0),

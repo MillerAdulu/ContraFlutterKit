@@ -13,8 +13,8 @@ class ShoppingListPageTwo extends StatefulWidget {
 }
 
 class _ShoppingListPageTwoState extends State<ShoppingListPageTwo> {
-  List<ShopItem> _items = List<ShopItem>();
-  List<String> _filters = List<String>();
+  List<ShopItem> _items = [];
+  List<String> _filters = [];
 
   @override
   void initState() {

@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
 class WeatherWidget extends StatelessWidget {
-  WeatherDate date;
+  WeatherDate? date;
 
   WeatherWidget({this.date});
 
@@ -17,7 +17,7 @@ class WeatherWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ContraText(
-            text: date.day,
+            text: date!.day,
             alignment: Alignment.center,
             weight: FontWeight.w800,
             size: 13,
@@ -27,7 +27,7 @@ class WeatherWidget extends StatelessWidget {
             height: 10,
           ),
           SvgPicture.asset(
-            date.image,
+            date!.image!,
             width: 32,
             height: 32,
           )

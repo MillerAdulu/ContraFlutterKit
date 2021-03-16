@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class LoginPasswordText extends StatelessWidget {
-  final String text;
-  final String iconPath;
+  final String? text;
+  final String? iconPath;
 
   const LoginPasswordText({this.text, this.iconPath});
 
@@ -37,7 +37,7 @@ class LoginPasswordText extends StatelessWidget {
             prefixIcon: Padding(
               padding: const EdgeInsets.all(16.0),
               child: SvgPicture.asset(
-                iconPath,
+                iconPath!,
                 height: 24,
                 width: 24,
               ),

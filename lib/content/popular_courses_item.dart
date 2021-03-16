@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PopularCourseItem extends StatelessWidget {
-  Author author;
+  Author? author;
 
   PopularCourseItem({this.author});
 
@@ -21,7 +21,7 @@ class PopularCourseItem extends StatelessWidget {
           Expanded(
             flex: 1,
             child: SvgPicture.asset(
-              author.path,
+              author!.path!,
               width: 60,
               height: 60,
             ),
@@ -36,7 +36,7 @@ class PopularCourseItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  author.name,
+                  author!.name!,
                   textAlign: TextAlign.start,
                   style: TextStyle(
                       fontSize: 21,
@@ -47,7 +47,7 @@ class PopularCourseItem extends StatelessWidget {
                   height: 6,
                 ),
                 Text(
-                  author.designation,
+                  author!.designation!,
                   textAlign: TextAlign.start,
                   style: TextStyle(
                       color: trout, fontWeight: FontWeight.w500, fontSize: 15),
@@ -85,7 +85,7 @@ class PopularCourseItem extends StatelessWidget {
 }
 
 class PopularCourseAuthorItem extends StatelessWidget {
-  AuthorText author;
+  AuthorText? author;
 
   PopularCourseAuthorItem({this.author});
 
@@ -101,7 +101,7 @@ class PopularCourseAuthorItem extends StatelessWidget {
             width: 144,
             height: 160,
             decoration: ShapeDecoration(
-                color: author.bgColor,
+                color: author!.bgColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     side: BorderSide(color: wood_smoke, width: 2))),
@@ -117,7 +117,7 @@ class PopularCourseAuthorItem extends StatelessWidget {
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.symmetric(vertical: 2),
             child: Text(
-              author.subject,
+              author!.subject!,
               maxLines: 2,
               textAlign: TextAlign.start,
               style: TextStyle(
@@ -128,7 +128,7 @@ class PopularCourseAuthorItem extends StatelessWidget {
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.symmetric(vertical: 1),
             child: Text(
-              author.hour,
+              author!.hour!,
               textAlign: TextAlign.start,
               style: TextStyle(
                   color: trout, fontSize: 13, fontWeight: FontWeight.bold),
@@ -141,17 +141,17 @@ class PopularCourseAuthorItem extends StatelessWidget {
 }
 
 class Author {
-  String designation;
-  String name;
-  String path;
+  String? designation;
+  String? name;
+  String? path;
 
   Author({this.name, this.designation, this.path});
 }
 
 class AuthorText {
-  String subject;
-  String hour;
-  Color bgColor;
+  String? subject;
+  String? hour;
+  Color? bgColor;
 
   AuthorText({this.subject, this.hour, this.bgColor});
 }

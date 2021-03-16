@@ -246,8 +246,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ],
           isCurved: true,
           colors: [
-            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2),
-            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2),
+            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2)!,
+            ColorTween(begin: lineColors[0], end: lineColors[1]).lerp(0.2)!,
           ],
           barWidth: 5,
           isStrokeCapRound: true,
@@ -256,10 +256,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
           ),
           belowBarData: BarAreaData(show: true, colors: [
             ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                .lerp(0.2)
+                .lerp(0.2)!
                 .withOpacity(0.1),
             ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                .lerp(0.2)
+                .lerp(0.2)!
                 .withOpacity(0.1),
           ]),
         ),

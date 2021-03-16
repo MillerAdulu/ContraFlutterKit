@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ContraInputBox extends StatelessWidget {
-  final String hintText;
-  final String iconPath;
-  final bool showPrefix;
+  final String? hintText;
+  final String? iconPath;
+  final bool? showPrefix;
 
   const ContraInputBox({this.hintText, this.iconPath, this.showPrefix});
 
@@ -31,11 +31,11 @@ class ContraInputBox extends StatelessWidget {
             border: OutlineInputBorder(
                 borderSide: BorderSide(width: 2, color: black),
                 borderRadius: BorderRadius.all(Radius.circular(16))),
-            prefixIcon: showPrefix
+            prefixIcon: showPrefix!
                 ? Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: SvgPicture.asset(
-                      iconPath,
+                      iconPath!,
                       height: 24,
                       width: 24,
                     ),

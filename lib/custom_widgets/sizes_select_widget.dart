@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SizesSelectWidget extends StatefulWidget {
-  final List<String> filters;
+  final List<String>? filters;
 
   const SizesSelectWidget({this.filters});
 
@@ -13,8 +13,8 @@ class SizesSelectWidget extends StatefulWidget {
 }
 
 class _SizesSelectWidgetState extends State<SizesSelectWidget> {
-  List<String> options = List();
-  List<int> selectedChoices = List();
+  List<String>? options = [];
+  List<int> selectedChoices = [];
 
   @override
   void initState() {
@@ -30,12 +30,12 @@ class _SizesSelectWidgetState extends State<SizesSelectWidget> {
       child: Wrap(
         spacing: 12,
         children: List<Widget>.generate(
-          options.length,
+          options!.length,
           (int index) {
             return SizeWidget(
               borderColor: wood_smoke,
               shadowColor: wood_smoke,
-              text: options[index],
+              text: options![index],
               selected: selectedChoices.contains(index),
               onTap: () {
                 setState(() {

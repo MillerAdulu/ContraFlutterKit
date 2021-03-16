@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class WeatherListItem extends StatelessWidget {
-  Weather weather;
+  Weather? weather;
 
   WeatherListItem({this.weather});
 
@@ -16,7 +16,7 @@ class WeatherListItem extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 12),
       padding: EdgeInsets.all(24),
       decoration: ShapeDecoration(
-          color: weather.color,
+          color: weather!.color,
           shadows: [BoxShadow(color: wood_smoke, offset: Offset(0, 2))],
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -29,7 +29,7 @@ class WeatherListItem extends StatelessWidget {
             children: <Widget>[
               ContraText(
                 color: wood_smoke,
-                text: weather.country,
+                text: weather!.country,
                 size: 27,
                 alignment: Alignment.centerLeft,
               ),
@@ -37,14 +37,14 @@ class WeatherListItem extends StatelessWidget {
                 children: <Widget>[
                   ContraText(
                     color: wood_smoke,
-                    text: weather.city + ",",
+                    text: weather!.city! + ",",
                     size: 13,
                     alignment: Alignment.centerLeft,
                     weight: FontWeight.bold,
                   ),
                   ContraText(
                     color: wood_smoke,
-                    text: weather.time + weather.am_pm,
+                    text: weather!.time! + weather!.am_pm!,
                     size: 13,
                     alignment: Alignment.centerLeft,
                     weight: FontWeight.bold,
@@ -61,7 +61,7 @@ class WeatherListItem extends StatelessWidget {
               ),
               ContraText(
                 color: wood_smoke,
-                text: weather.degree + "\u00B0",
+                text: weather!.degree! + "\u00B0",
                 size: 44,
                 alignment: Alignment.centerLeft,
               ),

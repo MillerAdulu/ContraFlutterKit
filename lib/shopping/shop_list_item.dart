@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ShopListItemWidget extends StatelessWidget {
-  final ShopItem shopItem;
-  final VoidCallback onTap;
+  final ShopItem? shopItem;
+  final VoidCallback? onTap;
 
   const ShopListItemWidget({this.shopItem, this.onTap});
 
@@ -24,12 +24,12 @@ class ShopListItemWidget extends StatelessWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: ShapeDecoration(
-                      color: shopItem.bgColor,
+                      color: shopItem!.bgColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(16)),
                           side: BorderSide(color: wood_smoke, width: 2))),
                   child: SvgPicture.asset(
-                    shopItem.image,
+                    shopItem!.image!,
                     width: 100,
                     height: 120,
                   ),
@@ -48,7 +48,7 @@ class ShopListItemWidget extends StatelessWidget {
                         Row(
                           children: <Widget>[
                             Text(
-                              shopItem.by,
+                              shopItem!.by!,
                               style: TextStyle(
                                   color: trout,
                                   fontSize: 15,
@@ -62,7 +62,7 @@ class ShopListItemWidget extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: Text(
-                                shopItem.name,
+                                shopItem!.name!,
                                 maxLines: 2,
                                 style: TextStyle(
                                     color: wood_smoke,
@@ -79,7 +79,7 @@ class ShopListItemWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "\$" + shopItem.price,
+                        "\$" + shopItem!.price!,
                         style: TextStyle(
                             color: wood_smoke,
                             fontSize: 24,

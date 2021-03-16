@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ButtonRoundWithShadow extends StatelessWidget {
-  final Color borderColor;
-  final Color shadowColor;
-  final Color color;
-  final String iconPath;
-  final VoidCallback callback;
-  final double size;
+  final Color? borderColor;
+  final Color? shadowColor;
+  final Color? color;
+  final String? iconPath;
+  final VoidCallback? callback;
+  final double? size;
 
   const ButtonRoundWithShadow(
       {this.borderColor,
@@ -28,7 +28,7 @@ class ButtonRoundWithShadow extends StatelessWidget {
         decoration: ShapeDecoration(
             shadows: [
               BoxShadow(
-                color: shadowColor,
+                color: shadowColor!,
                 offset: Offset(
                   0.0, // Move to right 10  horizontally
                   4.0, // Move to bottom 5 Vertically
@@ -37,9 +37,9 @@ class ButtonRoundWithShadow extends StatelessWidget {
             ],
             color: color,
             shape:
-                CircleBorder(side: BorderSide(color: borderColor, width: 2))),
+                CircleBorder(side: BorderSide(color: borderColor!, width: 2))),
         child: SvgPicture.asset(
-          iconPath,
+          iconPath!,
         ),
       ),
     );

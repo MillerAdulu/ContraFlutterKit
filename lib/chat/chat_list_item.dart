@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'chat.dart';
 
 class ChatListItemWidget extends StatelessWidget {
-  final Chat chat;
-  final VoidCallback callback;
+  final Chat? chat;
+  final VoidCallback? callback;
 
   const ChatListItemWidget({this.chat, this.callback});
 
@@ -24,7 +24,7 @@ class ChatListItemWidget extends StatelessWidget {
               flex: 1,
               child: RoundImageWithText(
                 size: 48,
-                text: chat.name.substring(0, 1),
+                text: chat!.name!.substring(0, 1),
                 color: dandelion,
                 borderColor: wood_smoke,
                 shadowColor: wood_smoke,
@@ -40,7 +40,7 @@ class ChatListItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    chat.name,
+                    chat!.name!,
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         fontSize: 21,
@@ -51,7 +51,7 @@ class ChatListItemWidget extends StatelessWidget {
                     height: 6,
                   ),
                   Text(
-                    chat.message,
+                    chat!.message!,
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         color: trout,
@@ -67,7 +67,7 @@ class ChatListItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    chat.time,
+                    chat!.time!,
                     style: TextStyle(
                         fontSize: 11,
                         color: santas_gray_10,
@@ -76,9 +76,9 @@ class ChatListItemWidget extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  chat.count.isNotEmpty
+                  chat!.count!.isNotEmpty
                       ? BadgeText(
-                          text: chat.count,
+                          text: chat!.count,
                           color: flamingo,
                         )
                       : SizedBox()

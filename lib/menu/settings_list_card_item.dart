@@ -4,7 +4,7 @@ import 'package:contraflutterkit/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class SettingsListCardItem extends StatelessWidget {
-  SettingsCardDetail detail;
+  SettingsCardDetail? detail;
 
   SettingsListCardItem({this.detail});
 
@@ -16,7 +16,7 @@ class SettingsListCardItem extends StatelessWidget {
         children: <Widget>[
           ContraText(
             color: trout,
-            text: detail.title,
+            text: detail!.title,
             textAlign: TextAlign.left,
             weight: FontWeight.bold,
             size: 21,
@@ -29,10 +29,10 @@ class SettingsListCardItem extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 16),
             height: 220,
             decoration: ShapeDecoration(
-                color: detail.bgColor,
+                color: detail!.bgColor,
                 shadows: [BoxShadow(offset: Offset(0, 4))],
                 shape: RoundedRectangleBorder(
-                    side: BorderSide(color: detail.borderColor, width: 2),
+                    side: BorderSide(color: detail!.borderColor!, width: 2),
                     borderRadius: BorderRadius.all(Radius.circular(16)))),
             child: ListView.builder(
               itemBuilder: (BuildContext context, int index) {
@@ -51,7 +51,7 @@ class SettingsListCardItem extends StatelessWidget {
                       ),
                       Expanded(
                         child: ContraText(
-                          text: detail.items[index].title,
+                          text: detail!.items![index].title,
                           textAlign: TextAlign.left,
                           weight: FontWeight.w800,
                           size: 17,
@@ -71,7 +71,7 @@ class SettingsListCardItem extends StatelessWidget {
                   ),
                 );
               },
-              itemCount: detail.items.length,
+              itemCount: detail!.items!.length,
             ),
           )
         ],

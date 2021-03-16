@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ShopGridItemWidget extends StatelessWidget {
-  final ShopItem shopItem;
-  final VoidCallback onTap;
+  final ShopItem? shopItem;
+  final VoidCallback? onTap;
 
   const ShopGridItemWidget({this.shopItem, this.onTap});
 
@@ -20,12 +20,12 @@ class ShopGridItemWidget extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             decoration: ShapeDecoration(
-                color: shopItem.bgColor,
+                color: shopItem!.bgColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     side: BorderSide(color: wood_smoke, width: 2))),
             child: SvgPicture.asset(
-              shopItem.image,
+              shopItem!.image!,
               width: 155,
               height: 170,
             ),
@@ -36,7 +36,7 @@ class ShopGridItemWidget extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              shopItem.name,
+              shopItem!.name!,
               maxLines: 2,
               textAlign: TextAlign.start,
               overflow: TextOverflow.ellipsis,
@@ -50,7 +50,7 @@ class ShopGridItemWidget extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "\$" + shopItem.price,
+              "\$" + shopItem!.price!,
               textAlign: TextAlign.start,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,

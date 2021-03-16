@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class InviteListItem extends StatelessWidget {
-  InviteDetail inviteDetail;
+  InviteDetail? inviteDetail;
 
   InviteListItem({this.inviteDetail});
 
@@ -24,7 +24,7 @@ class InviteListItem extends StatelessWidget {
           Expanded(
             flex: 1,
             child: SvgPicture.asset(
-              inviteDetail.profile,
+              inviteDetail!.profile!,
               width: 60,
               height: 60,
             ),
@@ -39,7 +39,7 @@ class InviteListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  inviteDetail.name,
+                  inviteDetail!.name!,
                   textAlign: TextAlign.start,
                   style: TextStyle(
                       fontSize: 21,
@@ -50,7 +50,7 @@ class InviteListItem extends StatelessWidget {
                   height: 6,
                 ),
                 Text(
-                  inviteDetail.designation,
+                  inviteDetail!.designation!,
                   textAlign: TextAlign.start,
                   style: TextStyle(
                       color: trout, fontWeight: FontWeight.w500, fontSize: 15),
@@ -60,14 +60,14 @@ class InviteListItem extends StatelessWidget {
           ),
           ContraButton(
             height: 36,
-            color: inviteDetail.isInvited ? wood_smoke : lightening_yellow,
+            color: inviteDetail!.isInvited! ? wood_smoke : lightening_yellow,
             isSuffix: false,
             isPrefix: false,
             size: 90,
-            text: inviteDetail.isInvited ? "Invited" : "Invite",
+            text: inviteDetail!.isInvited! ? "Invited" : "Invite",
             textSize: 12,
             borderColor: wood_smoke,
-            textColor: inviteDetail.isInvited ? white : wood_smoke,
+            textColor: inviteDetail!.isInvited! ? white : wood_smoke,
             callback: () {},
             shadowColor: wood_smoke,
           )

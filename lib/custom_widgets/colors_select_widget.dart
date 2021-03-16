@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'color_widget.dart';
 
 class ColorsSelectWidget extends StatefulWidget {
-  final List<Color> colors;
+  final List<Color>? colors;
 
   const ColorsSelectWidget({this.colors});
 
@@ -14,8 +14,8 @@ class ColorsSelectWidget extends StatefulWidget {
 }
 
 class _ColorsSelectWidgetState extends State<ColorsSelectWidget> {
-  List<Color> options = List();
-  List<int> selectedChoices = List();
+  List<Color>? options = [];
+  List<int> selectedChoices = [];
 
   @override
   void initState() {
@@ -31,10 +31,10 @@ class _ColorsSelectWidgetState extends State<ColorsSelectWidget> {
       child: Wrap(
         spacing: 12,
         children: List<Widget>.generate(
-          options.length,
+          options!.length,
           (int index) {
             return ColorWidget(
-              bgColor: options[index],
+              bgColor: options![index],
               borderColor: wood_smoke,
               shadowColor: wood_smoke,
               selected: selectedChoices.contains(index),

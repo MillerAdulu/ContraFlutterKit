@@ -13,7 +13,7 @@ class OnboardingPagerTypeTwo extends StatefulWidget {
 }
 
 class _OnboardingPagerTypeTwoState extends State<OnboardingPagerTypeTwo> {
-  PageController _pageController;
+  PageController? _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
@@ -47,7 +47,7 @@ class _OnboardingPagerTypeTwoState extends State<OnboardingPagerTypeTwo> {
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _pageController!.dispose();
     super.dispose();
   }
 
@@ -95,9 +95,9 @@ class _OnboardingPagerTypeTwoState extends State<OnboardingPagerTypeTwo> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      if (_pageController.hasClients) {
+                      if (_pageController!.hasClients) {
                         if (currentPageValue < 2) {
-                          _pageController.animateToPage(
+                          _pageController!.animateToPage(
                             currentPageValue + 1,
                             duration: const Duration(milliseconds: 400),
                             curve: Curves.easeInOut,

@@ -12,7 +12,7 @@ class OnboardingPagerTypeOne extends StatefulWidget {
 }
 
 class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
-  PageController _pageController;
+  PageController? _pageController;
   int currentPageValue = 0;
 
   final onboardingPageTypeOne = OnboardPageTypeOne();
@@ -45,7 +45,7 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _pageController!.dispose();
     super.dispose();
   }
 
@@ -103,9 +103,9 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
                         padding: EdgeInsets.all(16),
                         color: wood_smoke,
                         onPressed: () {
-                          if (_pageController.hasClients) {
+                          if (_pageController!.hasClients) {
                             if (currentPageValue < 2) {
-                              _pageController.animateToPage(
+                              _pageController!.animateToPage(
                                 currentPageValue + 1,
                                 duration: const Duration(milliseconds: 400),
                                 curve: Curves.easeInOut,

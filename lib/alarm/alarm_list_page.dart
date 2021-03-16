@@ -13,9 +13,9 @@ class AlarmListPage extends StatefulWidget {
 }
 
 class _AlarmListPageState extends State<AlarmListPage> {
-  List<Alarm> list = List<Alarm>();
-  List<String> items = List<String>();
-  List<String> items2 = List<String>();
+  List<Alarm> list = [];
+  List<String> items = [];
+  List<String> items2 = [];
 
   @override
   void initState() {

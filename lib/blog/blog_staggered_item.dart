@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BlogStaggeredItem extends StatelessWidget {
-  final BlogWithSize blog;
+  final BlogWithSize? blog;
 
   const BlogStaggeredItem({this.blog});
 
@@ -16,8 +16,8 @@ class BlogStaggeredItem extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            width: blog.width,
-            height: blog.height,
+            width: blog!.width,
+            height: blog!.height,
             alignment: Alignment.center,
             child: Center(
               child: Icon(
@@ -27,7 +27,7 @@ class BlogStaggeredItem extends StatelessWidget {
               ),
             ),
             decoration: ShapeDecoration(
-                color: blog.bgColor,
+                color: blog!.bgColor,
                 shadows: [
                   BoxShadow(
                     color: wood_smoke,
@@ -47,7 +47,7 @@ class BlogStaggeredItem extends StatelessWidget {
               ContraText(
                 size: 13,
                 alignment: Alignment.centerLeft,
-                text: blog.title,
+                text: blog!.title,
               ),
               Icon(
                 Icons.favorite_border,
@@ -56,7 +56,7 @@ class BlogStaggeredItem extends StatelessWidget {
             ],
           ),
           Text(
-            blog.description,
+            blog!.description!,
             style: TextStyle(color: trout, fontSize: 13),
           )
         ],

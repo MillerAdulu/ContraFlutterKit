@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapWidget extends StatefulWidget {
-  String distance;
-  bool isDetail;
+  String? distance;
+  bool? isDetail;
 
   MapWidget({this.distance, this.isDetail});
 

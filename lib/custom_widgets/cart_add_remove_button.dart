@@ -8,7 +8,7 @@ class CartAddRemoveButton extends StatefulWidget {
 }
 
 class _CartAddRemoveButtonState extends State<CartAddRemoveButton> {
-  int count;
+  int? count;
 
   @override
   void initState() {
@@ -17,17 +17,17 @@ class _CartAddRemoveButtonState extends State<CartAddRemoveButton> {
   }
 
   void onAddClicked() {
-    if (count < 4)
+    if (count! < 4)
       setState(() {
-        count = count + 1;
+        count = count! + 1;
         print("add clicked " + count.toString());
       });
   }
 
   void onRemoveClicked() {
-    if (count > 0)
+    if (count! > 0)
       setState(() {
-        count = count - 1;
+        count = count! - 1;
         print("remove clicked " + count.toString());
       });
   }

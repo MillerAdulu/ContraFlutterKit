@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomInputText extends StatelessWidget {
-  final String text;
-  final Color borderColor;
-  final Color shadowColor;
-  final Color color;
-  final VoidCallback callback;
+  final String? text;
+  final Color? borderColor;
+  final Color? shadowColor;
+  final Color? color;
+  final VoidCallback? callback;
 
 
   const CustomInputText(
@@ -24,7 +24,7 @@ class CustomInputText extends StatelessWidget {
           color: color,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(60)),
-              side: BorderSide(color: borderColor, width: 2))),
+              side: BorderSide(color: borderColor!, width: 2))),
       child: Row(
         children: <Widget>[
           Expanded(

@@ -13,8 +13,8 @@ class WeatherDetailPage extends StatefulWidget {
 }
 
 class _WeatherDetailPageState extends State<WeatherDetailPage> {
-  List<WeatherDate> days = List<WeatherDate>();
-  List<int> items = List<int>();
+  List<WeatherDate> days = [];
+  List<int> items = [];
 
   @override
   void initState() {

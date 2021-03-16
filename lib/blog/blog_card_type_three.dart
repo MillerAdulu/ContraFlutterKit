@@ -7,9 +7,9 @@ import 'package:flutter_svg/svg.dart';
 import 'blog.dart';
 
 class BlogCardTypeThree extends StatelessWidget {
-  final VoidCallback onTap;
-  final Blog blog;
-  final bool isSubType;
+  final VoidCallback? onTap;
+  final Blog? blog;
+  final bool? isSubType;
 
   const BlogCardTypeThree({this.onTap, this.blog, this.isSubType});
 
@@ -21,7 +21,7 @@ class BlogCardTypeThree extends StatelessWidget {
           margin: EdgeInsets.only(top: 24),
           padding: EdgeInsets.all(24),
           decoration: ShapeDecoration(
-              color: blog.bgColor,
+              color: blog!.bgColor,
               shadows: [
                 BoxShadow(
                   color: wood_smoke,
@@ -48,7 +48,7 @@ class BlogCardTypeThree extends StatelessWidget {
                     width: 20,
                   ),
                   Text(
-                    blog.user,
+                    blog!.user!,
                     style: TextStyle(
                         color: wood_smoke,
                         fontSize: 15,
@@ -56,7 +56,7 @@ class BlogCardTypeThree extends StatelessWidget {
                   )
                 ],
               ),
-              isSubType
+              isSubType!
                   ? Container(
                       height: 200,
                       margin: EdgeInsets.symmetric(vertical: 24),
@@ -104,7 +104,7 @@ class BlogCardTypeThree extends StatelessWidget {
                             height: 24,
                           ),
                           Text(
-                            blog.title,
+                            blog!.title!,
                             style: TextStyle(
                                 fontSize: 36,
                                 fontWeight: FontWeight.bold,

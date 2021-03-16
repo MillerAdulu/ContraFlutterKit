@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ChipWidget extends StatelessWidget {
-  final String text;
-  final bool selected;
-  final VoidCallback onTap;
+  final String? text;
+  final bool? selected;
+  final VoidCallback? onTap;
 
   const ChipWidget({this.text, this.selected, this.onTap});
 
@@ -21,15 +21,15 @@ class ChipWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
-                text,
+                text!,
                 style:
                     TextStyle(color: wood_smoke, fontWeight: FontWeight.bold),
               ),
-              selected ? SvgPicture.asset("assets/icons/close.svg") : SizedBox()
+              selected! ? SvgPicture.asset("assets/icons/close.svg") : SizedBox()
             ],
           ),
           decoration: ShapeDecoration(
-              color: selected ? pastel_pink : white,
+              color: selected! ? pastel_pink : white,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(44)),
                   side: BorderSide(color: wood_smoke, width: 2)))),

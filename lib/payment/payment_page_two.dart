@@ -16,12 +16,12 @@ class PaymentPageTwo extends StatefulWidget {
 
 class _PaymentPageTwoState extends State<PaymentPageTwo>
     with SingleTickerProviderStateMixin {
-  List<PaymentType> types = List<PaymentType>();
-  List<String> list = List<String>();
-  AnimationController controller;
+  List<PaymentType> types = [];
+  List<String> list = [];
+  late AnimationController controller;
   bool isVertical = true;
-  bool isChecked = false;
-  PageController _pageController;
+  bool? isChecked = false;
+  PageController? _pageController;
 
   @override
   void initState() {
@@ -64,7 +64,7 @@ class _PaymentPageTwoState extends State<PaymentPageTwo>
     _pageController = PageController(initialPage: 0, viewportFraction: 0.8);
   }
 
-  void onChecked(bool val) {
+  void onChecked(bool? val) {
     setState(() {
       isChecked = val;
     });

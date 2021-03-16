@@ -1,14 +1,14 @@
 import 'dart:ui';
 
 class Weather {
-  String country;
-  String city;
-  String time;
-  String image;
-  String am_pm;
+  String? country;
+  String? city;
+  String? time;
+  String? image;
+  String? am_pm;
 
-  String degree;
-  Color color;
+  String? degree;
+  Color? color;
 
   Weather(
       {this.country,
@@ -21,9 +21,9 @@ class Weather {
 }
 
 class WeatherDate {
-  String day;
-  String image;
-  Color color;
+  String? day;
+  String? image;
+  Color? color;
 
   WeatherDate({this.day, this.color, this.image});
 }

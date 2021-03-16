@@ -17,8 +17,8 @@ class ShoppingHomePageTwo extends StatefulWidget {
 }
 
 class _ShoppingHomePageTwoState extends State<ShoppingHomePageTwo> {
-  List<ShopItem> _items = List<ShopItem>();
-  List<Category> _categories = List<Category>();
+  List<ShopItem> _items = [];
+  List<Category> _categories = [];
   TextEditingController _textEditingController = TextEditingController();
 
   @override

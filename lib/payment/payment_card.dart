@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PaymentCard extends StatelessWidget {
-  final CardDetail card;
-  final bool isVertical;
-  final Color color;
+  final CardDetail? card;
+  final bool? isVertical;
+  final Color? color;
 
   const PaymentCard({this.card, this.isVertical, this.color});
 
@@ -19,7 +19,7 @@ class PaymentCard extends StatelessWidget {
       padding: EdgeInsets.all(16),
       margin: EdgeInsets.only(left: 24, right: 24, bottom: 16),
       decoration: ShapeDecoration(
-          color: card.color,
+          color: card!.color,
           shadows: [
             BoxShadow(
               color: wood_smoke,
@@ -36,7 +36,7 @@ class PaymentCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            card.type,
+            card!.type!,
             style: TextStyle(color: white, fontSize: 21),
           ),
           Padding(
@@ -55,7 +55,7 @@ class PaymentCard extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Text(
-                    card.number,
+                    card!.number!,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -78,7 +78,7 @@ class PaymentCard extends StatelessWidget {
                     style: TextStyle(color: white, fontSize: 12),
                   ),
                   Text(
-                    card.user_name,
+                    card!.user_name!,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(

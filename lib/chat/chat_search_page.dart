@@ -16,8 +16,8 @@ class ChatSearchPage extends StatefulWidget {
 }
 
 class _ChatSearchPageState extends State<ChatSearchPage> {
-  List<Chat> _items = List<Chat>();
-  List<Chat> _filtered = List<Chat>();
+  List<Chat> _items = [];
+  List<Chat> _filtered = [];
   TextEditingController _textEditingController = TextEditingController();
 
   @override
@@ -106,10 +106,10 @@ class _ChatSearchPageState extends State<ChatSearchPage> {
       });
       return;
     }
-    List<Chat> tempList = new List();
+    List<Chat> tempList = [];
     for (int i = 0; i < _filtered.length; i++) {
       if (_filtered[i]
-          .name
+          .name!
           .toLowerCase()
           .contains(_textEditingController.text.toLowerCase())) {
         tempList.add(_filtered[i]);

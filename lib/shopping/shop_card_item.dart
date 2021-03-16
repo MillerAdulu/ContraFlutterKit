@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ShopCardItemWidget extends StatelessWidget {
-  final ShopItem shopItem;
-  final VoidCallback onTap;
+  final ShopItem? shopItem;
+  final VoidCallback? onTap;
 
   const ShopCardItemWidget({this.shopItem, this.onTap});
 
@@ -21,12 +21,12 @@ class ShopCardItemWidget extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width,
               decoration: ShapeDecoration(
-                  color: shopItem.bgColor,
+                  color: shopItem!.bgColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       side: BorderSide(color: wood_smoke, width: 2))),
               child: SvgPicture.asset(
-                shopItem.image,
+                shopItem!.image!,
                 width: 235,
                 height: 212,
               ),
@@ -40,7 +40,7 @@ class ShopCardItemWidget extends StatelessWidget {
                   Expanded(
                     flex: 1,
                     child: Text(
-                      shopItem.name,
+                      shopItem!.name!,
                       maxLines: 2,
                       style: TextStyle(
                           color: wood_smoke,
@@ -50,7 +50,7 @@ class ShopCardItemWidget extends StatelessWidget {
                   ),
                   Icon(
                     Icons.favorite,
-                    color: shopItem.bgColor,
+                    color: shopItem!.bgColor,
                   )
                 ],
               ),
@@ -58,7 +58,7 @@ class ShopCardItemWidget extends StatelessWidget {
             Row(
               children: <Widget>[
                 Text(
-                  "\$" + shopItem.price,
+                  "\$" + shopItem!.price!,
                   style: TextStyle(
                       color: wood_smoke,
                       fontSize: 27,

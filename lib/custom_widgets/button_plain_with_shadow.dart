@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ButtonPlainWithShadow extends StatelessWidget {
-  final Color borderColor;
-  final Color shadowColor;
-  final Color color;
-  final Color textColor;
-  final String text;
-  final VoidCallback callback;
-  final double size;
-  final double height;
+  final Color? borderColor;
+  final Color? shadowColor;
+  final Color? color;
+  final Color? textColor;
+  final String? text;
+  final VoidCallback? callback;
+  final double? size;
+  final double? height;
 
   const ButtonPlainWithShadow(
       {this.borderColor,
@@ -32,7 +32,7 @@ class ButtonPlainWithShadow extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Center(
           child: Text(
-            text,
+            text!,
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: textColor != null ? textColor : wood_smoke,
@@ -43,7 +43,7 @@ class ButtonPlainWithShadow extends StatelessWidget {
         decoration: ShapeDecoration(
             shadows: [
               BoxShadow(
-                color: shadowColor,
+                color: shadowColor!,
                 offset: Offset(
                   0.0, // Move to right 10  horizontally
                   4.0, // Move to bottom 5 Vertically
@@ -53,7 +53,7 @@ class ButtonPlainWithShadow extends StatelessWidget {
             color: color,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
-                side: BorderSide(color: borderColor, width: 2))),
+                side: BorderSide(color: borderColor!, width: 2))),
       ),
     );
   }

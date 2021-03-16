@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ExpenseListItem extends StatelessWidget {
-  Expense expense;
+  Expense? expense;
 
   ExpenseListItem({this.expense});
 
@@ -17,7 +17,7 @@ class ExpenseListItem extends StatelessWidget {
         children: <Widget>[
           RoundImageWithText(
             size: 48,
-            text: expense.title.substring(0, 1),
+            text: expense!.title!.substring(0, 1),
             color: dandelion,
             borderColor: wood_smoke,
             shadowColor: wood_smoke,
@@ -32,7 +32,7 @@ class ExpenseListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  expense.time,
+                  expense!.time!,
                   textAlign: TextAlign.start,
                   style: TextStyle(
                       fontSize: 21,
@@ -43,7 +43,7 @@ class ExpenseListItem extends StatelessWidget {
                   height: 6,
                 ),
                 Text(
-                  expense.description,
+                  expense!.description!,
                   textAlign: TextAlign.start,
                   style: TextStyle(
                       color: trout, fontWeight: FontWeight.w500, fontSize: 15),
@@ -54,7 +54,7 @@ class ExpenseListItem extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Text(
-              expense.time,
+              expense!.time!,
               style: TextStyle(
                   fontSize: 11,
                   color: santas_gray_10,

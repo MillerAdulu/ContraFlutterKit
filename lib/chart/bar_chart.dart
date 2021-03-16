@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// Example of a Spark Bar by hiding both axis, reducing the chart margins.
 class SparkBar extends StatelessWidget {
   final List<charts.Series> seriesList;
-  final bool animate;
+  final bool? animate;
 
   SparkBar(this.seriesList, {this.animate});
 
@@ -21,8 +21,8 @@ class SparkBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new charts.BarChart(
-      seriesList,
-      animate: animate,
+      seriesList as List<Series<dynamic, String>>,
+      animate: animate!,
 
       /// Assign a custom style for the measure axis.
       ///

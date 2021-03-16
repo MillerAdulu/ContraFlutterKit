@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PaymentCartItem extends StatelessWidget {
-  final Color bgColor;
-  final String price;
-  final String type;
+  final Color? bgColor;
+  final String? price;
+  final String? type;
 
   const PaymentCartItem({this.bgColor, this.price, this.type});
 
@@ -39,7 +39,7 @@ class PaymentCartItem extends StatelessWidget {
               size: 44,
             ),
             Text(
-              type,
+              type!,
               style: TextStyle(
                   color: wood_smoke, fontSize: 21, fontWeight: FontWeight.w500),
             )

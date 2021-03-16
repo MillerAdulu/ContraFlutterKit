@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomListItem extends StatelessWidget {
-  final List<String> list;
+  final List<String>? list;
 
   const CustomListItem({this.list});
 
@@ -13,7 +13,7 @@ class CustomListItem extends StatelessWidget {
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         reverse: false,
-        itemCount: list.length,
+        itemCount: list!.length,
         itemBuilder: (context, index) {
           return Container(
             padding: EdgeInsets.symmetric(vertical: 8),
@@ -24,7 +24,7 @@ class CustomListItem extends StatelessWidget {
                   color: Colors.white,
                 ),
                 Text(
-                  list[index],
+                  list![index],
                   style: TextStyle(color: Colors.white, fontSize: 21),
                 )
               ],

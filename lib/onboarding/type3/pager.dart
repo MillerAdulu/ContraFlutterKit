@@ -14,7 +14,7 @@ class OnboardingPagerTypeThree extends StatefulWidget {
 }
 
 class _OnboardingPagerTypeThreeState extends State<OnboardingPagerTypeThree> {
-  PageController _pageController;
+  PageController? _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
@@ -49,7 +49,7 @@ class _OnboardingPagerTypeThreeState extends State<OnboardingPagerTypeThree> {
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _pageController!.dispose();
     super.dispose();
   }
 
